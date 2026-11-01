@@ -1,0 +1,20 @@
+# HACS's and Home Assistant's own checks on the integration, each time a new version of it arrives
+name: Validate
+
+on:
+  push:
+    paths: ['custom_components/**']
+  workflow_dispatch:
+
+jobs:
+  hacs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hacs/action@main
+        with:
+          category: integration
+  hassfest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master

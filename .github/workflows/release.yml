@@ -1,0 +1,23 @@
+# Publishes each version pushed here as a GitHub release, with arkviz.zip, which is what HACS installs. Versions come
+# from ArkViz's own repository, whose release workflow builds the integration, commits it here and pushes its tag; the
+# tag's message is the release's notes. Nothing here is edited by hand.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip the integration
+        run: (cd custom_components/arkviz && zip -r "$GITHUB_WORKSPACE/arkviz.zip" .)
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" arkviz.zip --title "ArkViz ${GITHUB_REF_NAME#v}" --notes-from-tag
