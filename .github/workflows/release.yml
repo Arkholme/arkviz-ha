@@ -1,4 +1,4 @@
-# Publishes each version pushed here as a GitHub release, with arkviz.zip, which is what HACS installs. Versions come
+# Publishes each version pushed here as a GitHub release, with arkviz.zip, which is what Home Assistant installs. Versions come
 # from ArkViz's own repository, whose release workflow builds the integration, commits it here and pushes its tag; the
 # tag's message is the release's notes. Nothing here is edited by hand.
 name: Release

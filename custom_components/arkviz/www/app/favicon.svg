@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- The door-swing mark (design/logo), following the browser's light or dark theme -->
+  <style>
+    .swing { fill: #eba53f }
+    .wall { stroke: #2b2e28 }
+    @media (prefers-color-scheme: dark) {
+      .swing { fill: #f4b65c }
+      .wall { stroke: #b4b8ad }
+    }
+  </style>
+  <path class="swing" d="M14 54V14A40 40 0 0 1 54 54Z" />
+  <path class="wall" d="M14 54V10" stroke-width="6" />
+  <path class="wall" d="M2 54H17M51 54H62" stroke-width="8" />
+</svg>

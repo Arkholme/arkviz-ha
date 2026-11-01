@@ -1,0 +1,24 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add ArkViz",
+        "description": "Adds ArkViz to the sidebar and at /arkviz-app/ on this address, where you draw a floorplan of your home and control your lights and devices from it. The plan you draw is kept in Home Assistant, so every screen shows the same one."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "ArkViz is already added."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ArkViz",
+        "description": "ArkViz is always at /arkviz-app/ on this address, for a wall panel or a full screen.",
+        "data": {
+          "sidebar": "Show in the sidebar"
+        }
+      }
+    }
+  }
+}

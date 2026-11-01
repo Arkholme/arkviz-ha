@@ -1,0 +1,21 @@
+{
+  "domain": "arkviz",
+  "name": "ArkViz",
+  "codeowners": [
+    "@MasonWray"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "frontend",
+    "http",
+    "panel_custom",
+    "websocket_api"
+  ],
+  "documentation": "https://arkviz.app",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/Arkholme/arkviz-ha/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}
