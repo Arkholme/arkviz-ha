@@ -1,0 +1,5 @@
+
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[n]="2e291057-4e0e-571e-96bf-137c69a13a9b")}catch(e){}}();
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./editor-B0NBEEeT.js","./rolldown-runtime-XKyaHtl9.js","./units-DQ01Sdbu.js","./storage-B1uEgcjB.js","./Button-8P7bi-mb.js","./Dialog-CbKFeiUn.js","./transact-BEbiG1sI.js","./persist-eEIkn1Bk.js","./SheetTabs-OiLCv0Ki.js","./StatusTag-Q8rp45V2.js","./tools-CrIk-3QL.js","./TextField-BpwUIiOd.js","./time-DLZggxSL.js"])))=>i.map(i=>d[i]);
+import{d as e,n as t,t as n,u as r}from"./storage-B1uEgcjB.js";import{n as i}from"./persist-eEIkn1Bk.js";var a=e(`/editor`)({loader:async()=>{let e=await n();return{storage:e,loaded:await i(e)}},gcTime:0,component:r(()=>t(()=>import(`./editor-B0NBEEeT.js`),__vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12]),import.meta.url),`component`)});export{a as t};
+//# debugId=2e291057-4e0e-571e-96bf-137c69a13a9b

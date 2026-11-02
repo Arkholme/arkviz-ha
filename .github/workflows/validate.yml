@@ -3,6 +3,7 @@ name: Validate
 
 on:
   push:
+    branches: [main]
     paths: ['custom_components/**']
   workflow_dispatch:
 
@@ -13,6 +14,8 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
+          # HACS asks for an open source license only to list a repository in its default store, not to install from one
+          ignore: license
   hassfest:
     runs-on: ubuntu-latest
     steps:

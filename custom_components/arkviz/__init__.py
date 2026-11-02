@@ -17,7 +17,8 @@ from homeassistant.helpers.storage import Store
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.loader import async_get_integration
 
-from .const import APP_URL, CONF_SIDEBAR, DEFAULT_SIDEBAR, DOMAIN, FILES_URL, PANEL_ELEMENT, PANEL_URL, STORAGE_KEY, STORAGE_VERSION
+from .const import APP_URL, CONF_SIDEBAR, DATA_TELEMETRY, DEFAULT_SIDEBAR, DOMAIN, FILES_URL, PANEL_ELEMENT, PANEL_URL, STORAGE_KEY, STORAGE_VERSION
+from .telemetry import WEBSOCKET_COMMANDS, Telemetry, setup_snapshots
 
 CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
@@ -86,18 +87,23 @@ class AppView(FilesView):
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Serve the app's files and answer its commands. Neither can be taken back, so they're set up once."""
     hass.data[DOMAIN] = PlanStore(hass)
+    hass.data[DATA_TELEMETRY] = Telemetry(hass)
     www = Path(__file__).parent / "www"
     hass.http.register_view(FilesView(hass, www))
     hass.http.register_view(AppView(hass, www / "app"))
     websocket_api.async_register_command(hass, ws_get_plan)
     websocket_api.async_register_command(hass, ws_save_plan)
     websocket_api.async_register_command(hass, ws_save_draft)
+    for command in WEBSOCKET_COMMANDS:
+        websocket_api.async_register_command(hass, command)
     return True
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Put ArkViz in the sidebar, unless it's been asked not to be there. Changing that sets it up again."""
     entry.async_on_unload(entry.add_update_listener(_async_options_changed))
+    for stop in setup_snapshots(hass):
+        entry.async_on_unload(stop)
     if not entry.options.get(CONF_SIDEBAR, DEFAULT_SIDEBAR):
         return True
     integration = await async_get_integration(hass, DOMAIN)

@@ -1,0 +1,4 @@
+
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[n]="6c169c8d-6bd3-5cf9-a79f-c6cbc8cced6d")}catch(e){}}();
+import{d as e}from"./units-DQ01Sdbu.js";var t=[[`ft-in`,`Feet & inches`],[`in`,`Inches`]],n=`ark-viz.editor`;function r(e,t){return t.imperialDimensions??(e.length===`in`?`in`:`ft-in`)}function i(t,n){let i=t.system===`imperial`?r(t,n):t.length;return e({...t,length:i,fraction:Math.max(t.fraction??1,8)})}function a(e,t=new Date,n){let r=e.toLocaleTimeString(n,{hour:`numeric`,minute:`2-digit`});if(e.toDateString()===t.toDateString())return r;let i=e.getFullYear()===t.getFullYear()?void 0:`numeric`;return`${e.toLocaleDateString(n,{day:`numeric`,month:`short`,year:i})}, ${r}`}export{r as a,i,n,t as r,a as t};
+//# debugId=6c169c8d-6bd3-5cf9-a79f-c6cbc8cced6d

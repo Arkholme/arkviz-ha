@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Checking out a tag leaves it without its message, which would make the notes the commit's
+      - name: Fetch the tag's message
+        run: git fetch --force origin "refs/tags/$GITHUB_REF_NAME:refs/tags/$GITHUB_REF_NAME"
       - name: Zip the integration
         run: (cd custom_components/arkviz && zip -r "$GITHUB_WORKSPACE/arkviz.zip" .)
       - name: Publish the release

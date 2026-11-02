@@ -34,6 +34,22 @@ It uses the sign-in Home Assistant already has in that browser, or asks you to s
 To take it out of the sidebar, go to Settings, then Devices & services, open ArkViz and choose Configure. Its own address
 keeps working.
 
+## Privacy
+
+ArkViz can send error reports, processed by Sentry, and usage metrics, processed by PostHog. Both are off until an admin of
+your Home Assistant turns them on. ArkViz asks the first time an admin opens it, and its Settings has both switches and the
+exact list of what each one sends. Anyone else with an account can opt out for themselves.
+
+- **Error reports:** an error's type and message, where in the code it happened, the page and version of ArkViz, the browser
+  and operating system, and a random ID for your home.
+- **Usage metrics:** once a day, a random ID for your home, the versions of ArkViz and Home Assistant, and how many floors,
+  rooms and devices of each kind are on your plan. Also once a day, a random ID for each account that opens ArkViz.
+
+Room, floor and device names, entity IDs, device states, your Home Assistant's address, tokens and your plan aren't sent. Any
+of these found in an error's message are removed first, in your browser and again in Home Assistant. Home Assistant does the
+sending, so requests reach Sentry and PostHog from your home's public IP address, and they're told not to store it. Turning a
+setting off stops sending and deletes its random IDs.
+
 ## Problems
 
 Report problems in this repository's [issues](https://github.com/Arkholme/arkviz-ha/issues), with the version you're

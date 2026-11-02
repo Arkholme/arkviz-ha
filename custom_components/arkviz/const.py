@@ -19,3 +19,8 @@ DEFAULT_SIDEBAR = True
 # The plan, in .storage/arkviz.plan
 STORAGE_KEY = "arkviz.plan"
 STORAGE_VERSION = 1
+
+# The home's answers about error reports and usage metrics, in .storage/arkviz.telemetry, and where they're kept while running
+TELEMETRY_STORAGE_KEY = "arkviz.telemetry"
+TELEMETRY_STORAGE_VERSION = 1
+DATA_TELEMETRY = "arkviz.telemetry"

@@ -1,0 +1,4 @@
+
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[n]="b16fb862-7235-5411-aea8-c39ab4b8eb4f")}catch(e){}}();
+import{_n as e}from"./units-DQ01Sdbu.js";import{i as t}from"./Button-8P7bi-mb.js";var n=e();function r({direction:e=`back`,className:r}){return(0,n.jsx)(`svg`,{width:16,height:16,viewBox:`0 0 24 24`,"aria-hidden":!0,className:t(`shrink-0 fill-none stroke-current [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:var(--weight-medium)]`,r),children:(0,n.jsx)(`path`,{d:e===`back`?`M15 5L8 12L15 19`:`M9 5L16 12L9 19`})})}export{r as t};
+//# debugId=b16fb862-7235-5411-aea8-c39ab4b8eb4f

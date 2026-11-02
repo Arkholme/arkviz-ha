@@ -1,1 +1,0 @@
-import{d as e}from"./units-KDM70Gx_.js";var t=[[`ft-in`,`Feet & inches`],[`in`,`Inches`]],n=`ark-viz.editor`;function r(e,t){return t.imperialDimensions??(e.length===`in`?`in`:`ft-in`)}function i(t,n){let i=t.system===`imperial`?r(t,n):t.length;return e({...t,length:i,fraction:Math.max(t.fraction??1,8)})}export{r as i,t as n,i as r,n as t};
