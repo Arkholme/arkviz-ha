@@ -12,9 +12,11 @@ This repository holds ArkViz's releases for Home Assistant, which installs them 
 On Home Assistant 2026.11 or later, through the Marketplace:
 
 1. Go to Settings, then Marketplace.
-2. Choose Add from link and enter `https://github.com/Arkholme/arkviz-ha`. The Marketplace asks you to connect GitHub the
-   first time, which only reads public information.
-3. Open ArkViz, choose Install, and follow its setup. If Home Assistant asks you to restart, restart it.
+2. Choose Add from link. The first time, the Marketplace explains that what you install from it isn't reviewed by the
+   Home Assistant project. Tick I understand the risks and agree, choose Continue, then choose Add from link again.
+3. Enter `https://github.com/Arkholme/arkviz-ha` and choose Add. The Marketplace asks you to connect GitHub the first
+   time, which only reads public information.
+4. Open ArkViz, choose Install, and follow its setup. If Home Assistant asks you to restart, restart it.
 
 On Home Assistant 2026.10 or earlier, through [HACS](https://hacs.xyz/docs/use/download/download/):
 
