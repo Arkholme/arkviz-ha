@@ -1,0 +1,5 @@
+
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[n]="f40e7696-06b8-5779-a563-3feeaa2d738a")}catch(e){}}();
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./editor-IcispEJ5.js","./rolldown-runtime-XKyaHtl9.js","./units-QduzeRSO.js","./storage-Ck1VJ1es.js","./Button-CQXVXnRi.js","./Dialog-CfJUdCcn.js","./transact-DjrEZ9YE.js","./persist-DaLDAmqT.js","./SheetTabs-CxCsiC1P.js","./StatusTag-DIMFuZy1.js","./tools-B1drsvS_.js","./TextField-mIHqfZmS.js","./time-BO40EG8c.js"])))=>i.map(i=>d[i]);
+import{d as e,n as t,t as n,u as r}from"./storage-Ck1VJ1es.js";import{n as i}from"./persist-DaLDAmqT.js";var a=e(`/editor`)({loader:async()=>{let e=await n();return{storage:e,loaded:await i(e)}},gcTime:0,component:r(()=>t(()=>import(`./editor-IcispEJ5.js`),__vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12]),import.meta.url),`component`)});export{a as t};
+//# debugId=f40e7696-06b8-5779-a563-3feeaa2d738a

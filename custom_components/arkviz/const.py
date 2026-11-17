@@ -24,3 +24,11 @@ STORAGE_VERSION = 1
 TELEMETRY_STORAGE_KEY = "arkviz.telemetry"
 TELEMETRY_STORAGE_VERSION = 1
 DATA_TELEMETRY = "arkviz.telemetry"
+
+# Art for art mode: the list in .storage/arkviz.art, the images themselves in arkviz/art in the configuration folder, and
+# the address they're shown from
+ART_STORAGE_KEY = "arkviz.art"
+ART_STORAGE_VERSION = 1
+ART_FOLDER = "arkviz/art"
+ART_URL = "/api/arkviz/art"
+DATA_ART = "arkviz.art"

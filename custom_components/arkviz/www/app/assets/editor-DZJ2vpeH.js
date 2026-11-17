@@ -1,5 +1,0 @@
-
-!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[n]="fb0263c1-4aab-5347-8c3b-f98a08787369")}catch(e){}}();
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./editor-DSYoxYV_.js","./rolldown-runtime-XKyaHtl9.js","./units-QduzeRSO.js","./storage-Ba9NW5d6.js","./Button-BaQPQ0-i.js","./Dialog-sfmeYlfc.js","./transact-DjrEZ9YE.js","./persist-DaLDAmqT.js","./SheetTabs-CWcmp-uK.js","./StatusTag-BSpk3S4z.js","./tools-CzKNzJed.js","./TextField-CTKWGR8-.js","./time-898I6gvc.js"])))=>i.map(i=>d[i]);
-import{d as e,n as t,t as n,u as r}from"./storage-Ba9NW5d6.js";import{n as i}from"./persist-DaLDAmqT.js";var a=e(`/editor`)({loader:async()=>{let e=await n();return{storage:e,loaded:await i(e)}},gcTime:0,component:r(()=>t(()=>import(`./editor-DSYoxYV_.js`),__vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10,11,12]),import.meta.url),`component`)});export{a as t};
-//# debugId=fb0263c1-4aab-5347-8c3b-f98a08787369

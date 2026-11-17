@@ -1,4 +1,5 @@
-"""ArkViz in Home Assistant: your home drawn in a sidebar panel and on a page of its own, and one plan kept here for every screen."""
+"""ArkViz in Home Assistant: your home drawn in a sidebar panel and on a page of its own, with one plan and the art for art
+mode kept here for every screen."""
 
 from __future__ import annotations
 
@@ -17,7 +18,8 @@ from homeassistant.helpers.storage import Store
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.loader import async_get_integration
 
-from .const import APP_URL, CONF_SIDEBAR, DATA_TELEMETRY, DEFAULT_SIDEBAR, DOMAIN, FILES_URL, PANEL_ELEMENT, PANEL_URL, STORAGE_KEY, STORAGE_VERSION
+from . import art
+from .const import APP_URL, CONF_SIDEBAR, DATA_ART, DATA_TELEMETRY, DEFAULT_SIDEBAR, DOMAIN, FILES_URL, PANEL_ELEMENT, PANEL_URL, STORAGE_KEY, STORAGE_VERSION
 from .telemetry import WEBSOCKET_COMMANDS, Telemetry, setup_snapshots
 
 CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
@@ -88,13 +90,15 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Serve the app's files and answer its commands. Neither can be taken back, so they're set up once."""
     hass.data[DOMAIN] = PlanStore(hass)
     hass.data[DATA_TELEMETRY] = Telemetry(hass)
+    hass.data[DATA_ART] = art.ArtStore(hass)
     www = Path(__file__).parent / "www"
     hass.http.register_view(FilesView(hass, www))
     hass.http.register_view(AppView(hass, www / "app"))
+    hass.http.register_view(art.ArtView(hass))
     websocket_api.async_register_command(hass, ws_get_plan)
     websocket_api.async_register_command(hass, ws_save_plan)
     websocket_api.async_register_command(hass, ws_save_draft)
-    for command in WEBSOCKET_COMMANDS:
+    for command in (*WEBSOCKET_COMMANDS, *art.WEBSOCKET_COMMANDS):
         websocket_api.async_register_command(hass, command)
     return True
 
